@@ -1,0 +1,3 @@
+import {useEffect,useState} from 'react';
+import {getPhoto} from '@/lib/storage';
+export default function LocalPhoto({id,name}:{id:string;name?:string}){const [url,setUrl]=useState('');const[error,setError]=useState(false);useEffect(()=>{let disposed=false,objectUrl='';getPhoto(id).then(photo=>{if(!photo||disposed)return;objectUrl=URL.createObjectURL(photo);setUrl(objectUrl)}).catch(()=>setError(true));return()=>{disposed=true;if(objectUrl)URL.revokeObjectURL(objectUrl)}},[id]);return url?<a href={url} target="_blank" rel="noreferrer"><img className="meal-photo" src={url} alt={name||'Meal photo'}/></a>:<span className="tiny">{error?'Photo unavailable':'Loading photo…'}</span>}
