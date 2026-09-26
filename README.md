@@ -20,6 +20,6 @@ npm run dev
 npm run build
 ```
 
-The production build is in `docs/`, with relative URLs suitable for a GitHub Pages project subdirectory. Commit both source changes and rebuilt `docs/` files. GitHub Pages is configured to publish `/docs` from the repository's `codex/pages` branch. `.nojekyll` disables Jekyll processing. The old server-dependent version is not included here.
+The production build is in `docs/`, with relative URLs suitable for a GitHub Pages project subdirectory. Commit both source changes and rebuilt `docs/` files. Publish `/docs` from the `codex/pages` branch after pushing this source. `.nojekyll` disables Jekyll processing. The old server-dependent version is not included here. GitHub publication is pending: the repository was created, but the app upload was blocked by repeated network and HTTP errors. Only its initial README is currently on GitHub.
 
 Use `npm run preview` to inspect the static production build. Data on localhost and the hosted GitHub Pages origin are separate; use backups to transfer entries.
